@@ -419,7 +419,7 @@
   "research.reignofnether.ravager_cavalry.tooltip2": "并发射如迫击炮般的爆炸箭。",
   "research.reignofnether.resource_capacity": "大背包",
   "research.reignofnether.resource_capacity.tooltip1": "将工人单位的最大资源承载量从100提高至200，",
-  "research.reignofnether.resource_capacity.tooltip2": "但工人单位仍然会在持有超过50点资源后返回存储。",
+  "research.reignofnether.resource_capacity.tooltip2": "单位移动速度增加15%。",
   "research.reignofnether.silverfish": "虫驻城墙",
   "research.reignofnether.silverfish.tooltip1": "使你的建筑每个方块被摧毁时",
   "research.reignofnether.silverfish.tooltip2": "有%d几率生成一只蠹虫。",

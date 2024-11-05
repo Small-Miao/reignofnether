@@ -197,7 +197,7 @@ public interface Unit {
     }
 
     public static boolean atThresholdResources(Unit unit) {
-        return Resources.getTotalResourcesFromItems(unit.getItems()).getTotalValue() >= 50;
+        return Resources.getTotalResourcesFromItems(unit.getItems()).getTotalValue() >= 25;
     }
 
     public default boolean hasLivingTarget() {

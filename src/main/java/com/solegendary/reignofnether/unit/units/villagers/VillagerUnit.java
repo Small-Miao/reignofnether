@@ -108,6 +108,7 @@ public class VillagerUnit extends Vindicator implements Unit, WorkerUnit, Attack
     }
 
     // combat stats
+    public void setMovementSpeed(float speed){movementSpeed = speed;}
     public float getMovementSpeed() {return movementSpeed;}
     public float getUnitMaxHealth() {return maxHealth;}
     public float getUnitArmorValue() {return armorValue;}
@@ -141,7 +142,7 @@ public class VillagerUnit extends Vindicator implements Unit, WorkerUnit, Attack
 
     final static public float maxHealth = 25.0f;
     final static public float armorValue = 0.0f;
-    final static public float movementSpeed = 0.25f;
+    static public float movementSpeed = 0.25f;
     final static public int popCost = ResourceCosts.VILLAGER.population;
     public int maxResources = 100;
 
@@ -250,14 +251,21 @@ public class VillagerUnit extends Vindicator implements Unit, WorkerUnit, Attack
 
     @Override
     public void setupEquipmentAndUpgradesClient() {
-        if (ResearchClient.hasResearch(ResearchResourceCapacity.itemName))
+        if (ResearchClient.hasResearch(ResearchResourceCapacity.itemName)){
             this.maxResources = 200;
+            LivingEntity entity = (LivingEntity) this;
+            entity.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.28);
+        }
     }
 
     @Override
     public void setupEquipmentAndUpgradesServer() {
-        if (ResearchServerEvents.playerHasResearch(this.getOwnerName(), ResearchResourceCapacity.itemName))
+        if (ResearchServerEvents.playerHasResearch(this.getOwnerName(), ResearchResourceCapacity.itemName)){
             this.maxResources = 200;
+            LivingEntity entity = (LivingEntity) this;
+            entity.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.28);
+        }
+
 
         if (this.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof BannerItem)
             this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.AIR));

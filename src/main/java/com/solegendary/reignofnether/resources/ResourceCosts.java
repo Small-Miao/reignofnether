@@ -136,4 +136,5 @@ public class ResourceCosts {
     public static ResourceCost RESEARCH_CIVILIAN_PORTAL = ResourceCost.Research(0, 75, 0, 20);
     public static ResourceCost RESEARCH_MILITARY_PORTAL = ResourceCost.Research(0, 125, 0, 30);
     public static ResourceCost RESEARCH_TRANSPORT_PORTAL = ResourceCost.Research(0, 175, 0, 40);
+    public static ResourceCost RESEARCH_COLLECTION_EFFICIENCY = ResourceCost.Research(250,250,300,60);
 }

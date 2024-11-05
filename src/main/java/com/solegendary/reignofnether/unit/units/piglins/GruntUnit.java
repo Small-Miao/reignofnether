@@ -7,6 +7,7 @@ import com.solegendary.reignofnether.hud.AbilityButton;
 import com.solegendary.reignofnether.keybinds.Keybindings;
 import com.solegendary.reignofnether.research.ResearchClient;
 import com.solegendary.reignofnether.research.ResearchServerEvents;
+import com.solegendary.reignofnether.research.researchItems.ResearchCollectionEfficiency;
 import com.solegendary.reignofnether.research.researchItems.ResearchResourceCapacity;
 import com.solegendary.reignofnether.resources.ResourceCosts;
 import com.solegendary.reignofnether.unit.UnitClientEvents;
@@ -59,7 +60,12 @@ public class GruntUnit extends Piglin implements Unit, WorkerUnit, AttackerUnit,
     UsePortalGoal usePortalGoal;
     public UsePortalGoal getUsePortalGoal() { return usePortalGoal; }
     public boolean canUsePortal() { return getUsePortalGoal() != null; }
+    public boolean collectionEfficiency = false;
 
+    @Override
+    public boolean getCollectionEfficiencyEnabled() {
+        return this.collectionEfficiency;
+    }
     public Faction getFaction() {return Faction.PIGLINS;}
     public List<AbilityButton> getAbilityButtons() {return abilityButtons;};
     public List<Ability> getAbilities() {return abilities;}
@@ -242,13 +248,31 @@ public class GruntUnit extends Piglin implements Unit, WorkerUnit, AttackerUnit,
 
     @Override
     public void setupEquipmentAndUpgradesClient() {
-        if (ResearchClient.hasResearch(ResearchResourceCapacity.itemName))
+        if (ResearchClient.hasResearch(ResearchResourceCapacity.itemName)){
             this.maxResources = 200;
+            LivingEntity entity = (LivingEntity) this;
+            double baseValue =  entity.getAttribute(Attributes.MOVEMENT_SPEED).getBaseValue();
+            baseValue = baseValue + (baseValue * 0.15f);
+            entity.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(baseValue);
+        }
+
+        if (ResearchServerEvents.playerHasResearch(this.getOwnerName(), ResearchCollectionEfficiency.itemName)){
+            this.collectionEfficiency = true;
+        }
     }
 
     @Override
     public void setupEquipmentAndUpgradesServer() {
-        if (ResearchServerEvents.playerHasResearch(this.getOwnerName(), ResearchResourceCapacity.itemName))
+        if (ResearchServerEvents.playerHasResearch(this.getOwnerName(), ResearchResourceCapacity.itemName)){
             this.maxResources = 200;
+            LivingEntity entity = (LivingEntity) this;
+            double baseValue =  entity.getAttribute(Attributes.MOVEMENT_SPEED).getBaseValue();
+            baseValue = baseValue + (baseValue * 0.15f);
+            entity.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(baseValue);
+        }
+
+        if (ResearchServerEvents.playerHasResearch(this.getOwnerName(), ResearchCollectionEfficiency.itemName)){
+            this.collectionEfficiency = true;
+        }
     }
 }

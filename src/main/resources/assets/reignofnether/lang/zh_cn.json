@@ -437,6 +437,8 @@
   "research.reignofnether.wither_clouds": "凋灵亡语",
   "research.reignofnether.wither_clouds.tooltip1": "被你的凋灵骷髅击杀的敌方单位",
   "research.reignofnether.wither_clouds.tooltip2": "将在死亡后留下一团具有凋灵效果的粒子云。",
+  "research.reignofnether.collection_efficlency": "精致工具",
+  "research.reignofnether.collection_efficlency.tooltip1": "使工人单位在采集资源时速度提升15%。",
 
   "resources.reignofnether.food": "食物",
   "resources.reignofnether.wood": "木材",

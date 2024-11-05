@@ -241,8 +241,8 @@ public interface Unit {
 
     public static float getSpeedModifier(Unit unit) {
         if (unit instanceof BruteUnit brute && brute.isHoldingUpShield) {
-            return 0.5f;
+            return 1.0f;
         }
-        return 1.0f;
+        return 1.25f;
     }
 }

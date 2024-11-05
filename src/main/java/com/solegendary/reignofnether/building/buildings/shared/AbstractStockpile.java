@@ -7,6 +7,7 @@ import com.solegendary.reignofnether.keybinds.Keybinding;
 import com.solegendary.reignofnether.hud.AbilityButton;
 import com.solegendary.reignofnether.keybinds.Keybindings;
 import com.solegendary.reignofnether.research.ResearchClient;
+import com.solegendary.reignofnether.research.researchItems.ResearchCollectionEfficiency;
 import com.solegendary.reignofnether.research.researchItems.ResearchResourceCapacity;
 import com.solegendary.reignofnether.resources.*;
 import com.solegendary.reignofnether.util.Faction;
@@ -52,7 +53,8 @@ public abstract class AbstractStockpile extends ProductionBuilding {
 
         if (level.isClientSide()) {
             this.productionButtons = Arrays.asList(
-                    ResearchResourceCapacity.getStartButton(this, Keybindings.keyQ)
+                    ResearchResourceCapacity.getStartButton(this, Keybindings.keyQ),
+                    ResearchCollectionEfficiency.getStartButton(this, Keybindings.keyW)
             );
         }
     }

@@ -5,6 +5,7 @@ import com.solegendary.reignofnether.building.BuildingBlock;
 import com.solegendary.reignofnether.building.BuildingUtils;
 import com.solegendary.reignofnether.fogofwar.FogOfWarClientEvents;
 import com.solegendary.reignofnether.research.ResearchServerEvents;
+import com.solegendary.reignofnether.research.researchItems.ResearchCollectionEfficiency;
 import com.solegendary.reignofnether.resources.*;
 import com.solegendary.reignofnether.unit.packets.UnitSyncClientboundPacket;
 import com.solegendary.reignofnether.unit.interfaces.Unit;
@@ -125,6 +126,7 @@ public class GatherResourcesGoal extends MoveToTargetBlockGoal {
         this.gatherTarget = gatherPos;
         this.gatherTicksLeft = gatherTicks;
         this.targetResourceSource = ResourceSources.getFromBlockPos(gatherTarget, mob.level);
+        System.out.println("Synced gather goal: " + gatherName + " at " + gatherPos + " with " + gatherTicks + " ticks left");
     }
 
     public void tickClient() {
@@ -248,9 +250,10 @@ public class GatherResourcesGoal extends MoveToTargetBlockGoal {
                 else {
                     if (ResearchServerEvents.playerHasCheat(((Unit) mob).getOwnerName(), "operationcwal"))
                         this.gatherTicksLeft -= (TICK_CD / 2) * 10;
+                    else if(ResearchServerEvents.playerHasResearch(((Unit) mob).getOwnerName(),ResearchCollectionEfficiency.itemName))
+                        this.gatherTicksLeft -= (TICK_CD / 2) * 2;
                     else
                         this.gatherTicksLeft -= (TICK_CD / 2);
-
                     gatherTicksLeft = Math.min(gatherTicksLeft, targetResourceSource.ticksToGather);
                     if (gatherTicksLeft <= 0) {
                         gatherTicksLeft = DEFAULT_MAX_GATHER_TICKS;

@@ -192,6 +192,7 @@ public abstract class ProductionBuilding extends Building {
                 case WitherSkeletonProd.itemName -> prodItem = new WitherSkeletonProd(building);
                 case GhastProd.itemName -> prodItem = new GhastProd(building);
 
+                case ResearchCollectionEfficiency.itemName -> prodItem = new ResearchCollectionEfficiency(building);
                 case ResearchVindicatorAxes.itemName -> prodItem = new ResearchVindicatorAxes(building);
                 case ResearchPillagerCrossbows.itemName -> prodItem = new ResearchPillagerCrossbows(building);
                 case ResearchLabLightningRod.itemName -> prodItem = new ResearchLabLightningRod(building);

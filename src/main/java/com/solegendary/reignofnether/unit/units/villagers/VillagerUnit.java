@@ -8,6 +8,7 @@ import com.solegendary.reignofnether.hud.AbilityButton;
 import com.solegendary.reignofnether.keybinds.Keybindings;
 import com.solegendary.reignofnether.research.ResearchClient;
 import com.solegendary.reignofnether.research.ResearchServerEvents;
+import com.solegendary.reignofnether.research.researchItems.ResearchCollectionEfficiency;
 import com.solegendary.reignofnether.research.researchItems.ResearchResourceCapacity;
 import com.solegendary.reignofnether.resources.ResourceCosts;
 import com.solegendary.reignofnether.unit.UnitClientEvents;
@@ -67,6 +68,13 @@ public class VillagerUnit extends Vindicator implements Unit, WorkerUnit, Attack
     public UsePortalGoal getUsePortalGoal() { return usePortalGoal; }
     public boolean canUsePortal() { return getUsePortalGoal() != null; }
 
+    public boolean collectionEfficiency = false;
+
+    @Override
+    public boolean getCollectionEfficiencyEnabled() {
+        return this.collectionEfficiency;
+    }
+
     public Faction getFaction() {return Faction.VILLAGERS;}
     public List<AbilityButton> getAbilityButtons() {return abilityButtons;};
     public List<Ability> getAbilities() {return abilities;}
@@ -108,7 +116,6 @@ public class VillagerUnit extends Vindicator implements Unit, WorkerUnit, Attack
     }
 
     // combat stats
-    public void setMovementSpeed(float speed){movementSpeed = speed;}
     public float getMovementSpeed() {return movementSpeed;}
     public float getUnitMaxHealth() {return maxHealth;}
     public float getUnitArmorValue() {return armorValue;}
@@ -142,7 +149,7 @@ public class VillagerUnit extends Vindicator implements Unit, WorkerUnit, Attack
 
     final static public float maxHealth = 25.0f;
     final static public float armorValue = 0.0f;
-    static public float movementSpeed = 0.25f;
+    final static public float movementSpeed = 0.25f;
     final static public int popCost = ResourceCosts.VILLAGER.population;
     public int maxResources = 100;
 
@@ -254,7 +261,13 @@ public class VillagerUnit extends Vindicator implements Unit, WorkerUnit, Attack
         if (ResearchClient.hasResearch(ResearchResourceCapacity.itemName)){
             this.maxResources = 200;
             LivingEntity entity = (LivingEntity) this;
-            entity.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.28);
+            double baseValue =  entity.getAttribute(Attributes.MOVEMENT_SPEED).getBaseValue();
+            baseValue = baseValue + (baseValue * 0.15f);
+            entity.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(baseValue);
+        }
+
+        if (ResearchServerEvents.playerHasResearch(this.getOwnerName(), ResearchCollectionEfficiency.itemName)){
+            this.collectionEfficiency = true;
         }
     }
 
@@ -263,7 +276,13 @@ public class VillagerUnit extends Vindicator implements Unit, WorkerUnit, Attack
         if (ResearchServerEvents.playerHasResearch(this.getOwnerName(), ResearchResourceCapacity.itemName)){
             this.maxResources = 200;
             LivingEntity entity = (LivingEntity) this;
-            entity.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.28);
+            double baseValue =  entity.getAttribute(Attributes.MOVEMENT_SPEED).getBaseValue();
+            baseValue = baseValue + (baseValue * 0.15f);
+            entity.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(baseValue);
+        }
+
+        if (ResearchServerEvents.playerHasResearch(this.getOwnerName(), ResearchCollectionEfficiency.itemName)){
+            this.collectionEfficiency = true;
         }
 
 

@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public interface WorkerUnit {
 
+    public boolean getCollectionEfficiencyEnabled();
     public BuildRepairGoal getBuildRepairGoal();
     public GatherResourcesGoal getGatherResourceGoal();
     public BlockState getReplantBlockState();
@@ -29,22 +30,34 @@ public interface WorkerUnit {
         ItemStack mainHandItem = entity.getItemBySlot(EquipmentSlot.MAINHAND);
 
         if (unit.getBuildRepairGoal().isBuilding()) {
-            if (!mainHandItem.is(Items.IRON_SHOVEL))
-                entity.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SHOVEL));
+            if (unit.getCollectionEfficiencyEnabled()){
+                if (!mainHandItem.is(Items.IRON_SHOVEL))
+                    entity.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_SHOVEL));
+            } else if (!mainHandItem.is(Items.WOODEN_SHOVEL))
+                entity.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.WOODEN_SHOVEL));
         }
         else if (unit.getGatherResourceGoal().isGathering()) {
             switch (unit.getGatherResourceGoal().getTargetResourceName()) {
                 case FOOD -> {
-                    if (!mainHandItem.is(Items.IRON_HOE))
-                        entity.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_HOE));
+                    if (unit.getCollectionEfficiencyEnabled()){
+                        if (!mainHandItem.is(Items.IRON_HOE))
+                            entity.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_HOE));
+                    } else if (!mainHandItem.is(Items.WOODEN_HOE))
+                        entity.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.WOODEN_HOE));
                 }
                 case WOOD -> {
-                    if (!mainHandItem.is(Items.IRON_AXE))
-                        entity.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_AXE));
+                    if (unit.getCollectionEfficiencyEnabled()){
+                        if (!mainHandItem.is(Items.IRON_AXE))
+                            entity.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_AXE));
+                    } else if (!mainHandItem.is(Items.WOODEN_AXE))
+                        entity.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.WOODEN_AXE));
                 }
                 case ORE -> {
-                    if (!mainHandItem.is(Items.IRON_PICKAXE))
-                        entity.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_PICKAXE));
+                    if (unit.getCollectionEfficiencyEnabled()){
+                        if (!mainHandItem.is(Items.IRON_PICKAXE))
+                            entity.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.IRON_PICKAXE));
+                    } else if (!mainHandItem.is(Items.WOODEN_PICKAXE))
+                        entity.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.WOODEN_PICKAXE));
                 }
                 case NONE -> {
                     if (!mainHandItem.is(Items.AIR))

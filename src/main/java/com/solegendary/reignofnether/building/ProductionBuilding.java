@@ -245,6 +245,10 @@ public abstract class ProductionBuilding extends Building {
                 case ResearchBeaconLevel3.itemName -> prodItem = new ResearchBeaconLevel3(building);
                 case ResearchBeaconLevel4.itemName -> prodItem = new ResearchBeaconLevel4(building);
                 case ResearchBeaconLevel5.itemName -> prodItem = new ResearchBeaconLevel5(building);
+
+                case ResearchAdvancedToolsLevel1.itemName -> prodItem = new ResearchAdvancedToolsLevel1(building);
+                case ResearchAdvancedToolsLevel2.itemName -> prodItem = new ResearchAdvancedToolsLevel2(building);
+                case ResearchAdvancedToolsLevel3.itemName -> prodItem = new ResearchAdvancedToolsLevel3(building);
             }
             if (prodItem != null) {
                 // only worry about checking affordability on serverside

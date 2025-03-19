@@ -15,6 +15,9 @@ import com.solegendary.reignofnether.research.ResearchServerEvents;
 import com.solegendary.reignofnether.research.researchItems.ResearchResourceCapacity;
 import com.solegendary.reignofnether.resources.ResourceCost;
 import com.solegendary.reignofnether.resources.ResourceCosts;
+import com.solegendary.reignofnether.research.researchItems.ResearchAdvancedToolsLevel1;
+import com.solegendary.reignofnether.research.researchItems.ResearchAdvancedToolsLevel2;
+import com.solegendary.reignofnether.research.researchItems.ResearchAdvancedToolsLevel3;
 import com.solegendary.reignofnether.unit.Checkpoint;
 import com.solegendary.reignofnether.unit.UnitClientEvents;
 import com.solegendary.reignofnether.unit.goals.*;
@@ -401,12 +404,24 @@ public class VillagerUnit extends Vindicator implements Unit, WorkerUnit, Attack
     public void setupEquipmentAndUpgradesClient() {
         if (ResearchClient.hasResearch(ResearchResourceCapacity.itemName))
             this.maxResources = 200;
+        if (ResearchClient.hasResearch(ResearchAdvancedToolsLevel1.itemName))
+            this.gatherResourcesGoal.setGatherSpeedMultiplier(1.05f);
+        if (ResearchClient.hasResearch(ResearchAdvancedToolsLevel2.itemName))
+            this.gatherResourcesGoal.setGatherSpeedMultiplier(1.1f);
+        if (ResearchClient.hasResearch(ResearchAdvancedToolsLevel3.itemName))
+            this.gatherResourcesGoal.setGatherSpeedMultiplier(1.15f);
     }
 
     @Override
     public void setupEquipmentAndUpgradesServer() {
         if (ResearchServerEvents.playerHasResearch(this.getOwnerName(), ResearchResourceCapacity.itemName))
             this.maxResources = 200;
+        if (ResearchClient.hasResearch(ResearchAdvancedToolsLevel1.itemName))
+            this.gatherResourcesGoal.setGatherSpeedMultiplier(1.05f);
+        if (ResearchClient.hasResearch(ResearchAdvancedToolsLevel2.itemName))
+            this.gatherResourcesGoal.setGatherSpeedMultiplier(1.1f);
+        if (ResearchClient.hasResearch(ResearchAdvancedToolsLevel3.itemName))
+            this.gatherResourcesGoal.setGatherSpeedMultiplier(1.15f);
 
         if (this.getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof BannerItem)
             this.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.AIR));

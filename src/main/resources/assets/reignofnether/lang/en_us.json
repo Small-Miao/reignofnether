@@ -1072,5 +1072,12 @@
     "startpos.reignofnether.cancelled_start_game": "Game start cancelled",
     "startpos.reignofnether.starting_game": "Game starting in %d seconds",
     "startpos.reignofnether.started_game": "Game started!",
-    "startpos.reignofnether.max_positions": "Max starting positions reached (16)"
+    "startpos.reignofnether.max_positions": "Max starting positions reached (16)",
+
+    "research.reignofnether.advanced_tools_level2": "Advanced Tools II",
+    "research.reignofnether.advanced_tools_level2.tooltip1": "Increases resource gathering speed by 50%% for all worker units",
+    "research.reignofnether.advanced_tools_level2.tooltip2": "Requires Advanced Tools I",
+    "research.reignofnether.advanced_tools_level3": "Advanced Tools III",
+    "research.reignofnether.advanced_tools_level3.tooltip1": "Increases resource gathering speed by 100%% for all worker units",
+    "research.reignofnether.advanced_tools_level3.tooltip2": "Requires Advanced Tools II"
 }

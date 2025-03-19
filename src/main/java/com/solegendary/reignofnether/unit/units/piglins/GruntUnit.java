@@ -12,6 +12,9 @@ import com.solegendary.reignofnether.research.ResearchServerEvents;
 import com.solegendary.reignofnether.research.researchItems.ResearchResourceCapacity;
 import com.solegendary.reignofnether.resources.ResourceCost;
 import com.solegendary.reignofnether.resources.ResourceCosts;
+import com.solegendary.reignofnether.research.researchItems.ResearchAdvancedToolsLevel1;
+import com.solegendary.reignofnether.research.researchItems.ResearchAdvancedToolsLevel2;
+import com.solegendary.reignofnether.research.researchItems.ResearchAdvancedToolsLevel3;
 import com.solegendary.reignofnether.unit.Checkpoint;
 import com.solegendary.reignofnether.unit.goals.*;
 import com.solegendary.reignofnether.unit.interfaces.ArmSwingingUnit;
@@ -254,12 +257,24 @@ public class GruntUnit extends Piglin implements Unit, WorkerUnit, AttackerUnit,
     public void setupEquipmentAndUpgradesClient() {
         if (ResearchClient.hasResearch(ResearchResourceCapacity.itemName))
             this.maxResources = 200;
+        if (ResearchClient.hasResearch(ResearchAdvancedToolsLevel1.itemName))
+            this.gatherResourcesGoal.setGatherSpeedMultiplier(1.05f);
+        if (ResearchClient.hasResearch(ResearchAdvancedToolsLevel2.itemName))
+            this.gatherResourcesGoal.setGatherSpeedMultiplier(1.1f);
+        if (ResearchClient.hasResearch(ResearchAdvancedToolsLevel3.itemName))
+            this.gatherResourcesGoal.setGatherSpeedMultiplier(1.15f);
     }
 
     @Override
     public void setupEquipmentAndUpgradesServer() {
         if (ResearchServerEvents.playerHasResearch(this.getOwnerName(), ResearchResourceCapacity.itemName))
             this.maxResources = 200;
+        if (ResearchServerEvents.playerHasResearch(this.getOwnerName(), ResearchAdvancedToolsLevel1.itemName))
+            this.gatherResourcesGoal.setGatherSpeedMultiplier(1.05f);
+        if (ResearchServerEvents.playerHasResearch(this.getOwnerName(), ResearchAdvancedToolsLevel2.itemName))
+            this.gatherResourcesGoal.setGatherSpeedMultiplier(1.1f);
+        if (ResearchServerEvents.playerHasResearch(this.getOwnerName(), ResearchAdvancedToolsLevel3.itemName))
+            this.gatherResourcesGoal.setGatherSpeedMultiplier(1.15f);       
     }
 
     @Override

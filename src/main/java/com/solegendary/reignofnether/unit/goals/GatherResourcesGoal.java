@@ -48,6 +48,7 @@ public class GatherResourcesGoal extends MoveToTargetBlockGoal {
     private static final int REACH_RANGE = 5;
     private static final int DEFAULT_MAX_GATHER_TICKS = 600; // ticks to gather blocks - actual ticks may be lower, depending on the ResourceSource targeted
     private int gatherTicksLeft = DEFAULT_MAX_GATHER_TICKS;
+    private float gatherSpeedMultiplier = 1.0f; // 添加速度倍率变量
     private static final int MAX_SEARCH_CD_TICKS = 40; // while idle, worker will look for a new block once every this number of ticks (searching is expensive!)
     private int searchCdTicksLeft = 0;
     private int failedSearches = 0; // number of times we've failed to search for a new block - as this increases slow down or stop searching entirely to prevent lag
@@ -132,7 +133,7 @@ public class GatherResourcesGoal extends MoveToTargetBlockGoal {
     public void tickClient() {
         if (data.targetResourceSource != null && this.data.gatherTarget != null && isGathering() && FogOfWarClientEvents.isInBrightChunk(this.data.gatherTarget)) {
             gatherTicksLeft = Math.min(gatherTicksLeft, data.targetResourceSource.ticksToGather);
-            gatherTicksLeft -= 1;
+            gatherTicksLeft -= (int)(1 * gatherSpeedMultiplier); // 应用速度倍率
             if (gatherTicksLeft <= 0)
                 gatherTicksLeft = data.targetResourceSource.ticksToGather;
             int gatherProgress = Math.round((data.targetResourceSource.ticksToGather - gatherTicksLeft) / (float) data.targetResourceSource.ticksToGather * 10);
@@ -270,6 +271,9 @@ public class GatherResourcesGoal extends MoveToTargetBlockGoal {
                         ticksToProgress = (TICK_CD / 2) * 10;
                     else
                         ticksToProgress = (TICK_CD / 2);
+
+                    // 应用速度倍率
+                    ticksToProgress = (int)(ticksToProgress * gatherSpeedMultiplier);
 
                     if (mob instanceof VillagerUnit vUnit) {
                         if (ResourceSources.getBlockResourceName(getGatherTarget(), mob.level) == ResourceName.WOOD &&
@@ -488,5 +492,13 @@ public class GatherResourcesGoal extends MoveToTargetBlockGoal {
 
     public boolean isIdle() {
         return ticksIdle > IDLE_TIMEOUT;
+    }
+
+    public void setGatherSpeedMultiplier(float multiplier) {
+        this.gatherSpeedMultiplier = Math.max(0.1f, multiplier); // 确保速度不会太慢
+    }
+
+    public float getGatherSpeedMultiplier() {
+        return this.gatherSpeedMultiplier;
     }
 }

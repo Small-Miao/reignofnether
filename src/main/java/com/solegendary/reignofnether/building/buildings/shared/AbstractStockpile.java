@@ -4,6 +4,9 @@ import com.solegendary.reignofnether.ReignOfNether;
 import com.solegendary.reignofnether.building.*;
 import com.solegendary.reignofnether.keybinds.Keybindings;
 import com.solegendary.reignofnether.research.researchItems.ResearchResourceCapacity;
+import com.solegendary.reignofnether.research.researchItems.ResearchAdvancedToolsLevel1;
+import com.solegendary.reignofnether.research.researchItems.ResearchAdvancedToolsLevel2;
+import com.solegendary.reignofnether.research.researchItems.ResearchAdvancedToolsLevel3;
 import com.solegendary.reignofnether.resources.*;
 import com.solegendary.reignofnether.util.Faction;
 import net.minecraft.core.BlockPos;
@@ -43,7 +46,10 @@ public abstract class AbstractStockpile extends ProductionBuilding {
 
         if (level.isClientSide()) {
             this.productionButtons = Arrays.asList(
-                    ResearchResourceCapacity.getStartButton(this, Keybindings.keyQ)
+                    ResearchResourceCapacity.getStartButton(this, Keybindings.keyQ),
+                    ResearchAdvancedToolsLevel1.getStartButton(this, Keybindings.keyE),
+                    ResearchAdvancedToolsLevel2.getStartButton(this, Keybindings.keyE),
+                    ResearchAdvancedToolsLevel3.getStartButton(this, Keybindings.keyE)
             );
         }
     }

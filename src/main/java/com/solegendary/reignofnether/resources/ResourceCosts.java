@@ -131,7 +131,9 @@ public class ResourceCosts {
     public static final ResourceCost RESEARCH_BEACON_LEVEL3 = new ResourceCost(ID, "RESEARCH_BEACON_LEVEL3");
     public static final ResourceCost RESEARCH_BEACON_LEVEL4 = new ResourceCost(ID, "RESEARCH_BEACON_LEVEL4");
     public static final ResourceCost RESEARCH_BEACON_LEVEL5 = new ResourceCost(ID, "RESEARCH_BEACON_LEVEL5");
-
+    public static final ResourceCost RESEARCH_ADVANCED_TOOLS_LEVEL_1 = new ResourceCost(ID, "RESEARCH_ADVANCED_TOOLS_LEVEL_1");
+    public static final ResourceCost RESEARCH_ADVANCED_TOOLS_LEVEL_2 = new ResourceCost(ID, "RESEARCH_ADVANCED_TOOLS_LEVEL_2");
+    public static final ResourceCost RESEARCH_ADVANCED_TOOLS_LEVEL_3 = new ResourceCost(ID, "RESEARCH_ADVANCED_TOOLS_LEVEL_3");
     // ENCHANTMENTS
 
     public static final ResourceCost ENCHANT_MAIMING = new ResourceCost(ID, "ENCHANT_MAIMING");
@@ -295,6 +297,10 @@ public class ResourceCosts {
         RESEARCH_BEACON_LEVEL3.bakeValues(ReignOfNetherCommonConfigs.ResearchCosts.RESEARCH_BEACON_LEVEL3);
         RESEARCH_BEACON_LEVEL4.bakeValues(ReignOfNetherCommonConfigs.ResearchCosts.RESEARCH_BEACON_LEVEL4);
         RESEARCH_BEACON_LEVEL5.bakeValues(ReignOfNetherCommonConfigs.ResearchCosts.RESEARCH_BEACON_LEVEL5);
+        RESEARCH_ADVANCED_TOOLS_LEVEL_1.bakeValues(ReignOfNetherCommonConfigs.ResearchCosts.RESEARCH_ADVANCED_TOOLS_LEVEL1);
+        RESEARCH_ADVANCED_TOOLS_LEVEL_2.bakeValues(ReignOfNetherCommonConfigs.ResearchCosts.RESEARCH_ADVANCED_TOOLS_LEVEL2);
+        RESEARCH_ADVANCED_TOOLS_LEVEL_3.bakeValues(ReignOfNetherCommonConfigs.ResearchCosts.RESEARCH_ADVANCED_TOOLS_LEVEL3);
+        
         // ******************* ENCHANTMENTS ******************* //
         ENCHANT_MAIMING.bakeValues(ReignOfNetherCommonConfigs.EnchantmentCosts.ENCHANT_MAIMING);
         ENCHANT_QUICK_CHARGE.bakeValues(ReignOfNetherCommonConfigs.EnchantmentCosts.ENCHANT_QUICK_CHARGE);

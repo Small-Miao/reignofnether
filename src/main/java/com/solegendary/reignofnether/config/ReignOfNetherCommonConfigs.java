@@ -141,6 +141,9 @@ public class ReignOfNetherCommonConfigs {
         ResearchCosts.RESEARCH_BEACON_LEVEL3.define(BUILDER);
         ResearchCosts.RESEARCH_BEACON_LEVEL4.define(BUILDER);
         ResearchCosts.RESEARCH_BEACON_LEVEL5.define(BUILDER);
+        ResearchCosts.RESEARCH_ADVANCED_TOOLS_LEVEL1.define(BUILDER);
+        ResearchCosts.RESEARCH_ADVANCED_TOOLS_LEVEL2.define(BUILDER);
+        ResearchCosts.RESEARCH_ADVANCED_TOOLS_LEVEL3.define(BUILDER);
 
         //*Enchantments*
         BUILDER.comment("Enchantment Cost Configurations");
@@ -280,6 +283,10 @@ public class ReignOfNetherCommonConfigs {
         public static final ResourceCostConfigEntry RESEARCH_BEACON_LEVEL3 = ResourceCostConfigEntry.Research(0, 0, 400, 120, ResourceCosts.RESEARCH_BEACON_LEVEL3, "Beacon Level 3 Research Config");
         public static final ResourceCostConfigEntry RESEARCH_BEACON_LEVEL4 = ResourceCostConfigEntry.Research(0, 0, 500, 120, ResourceCosts.RESEARCH_BEACON_LEVEL4, "Beacon Level 4 Research Config");
         public static final ResourceCostConfigEntry RESEARCH_BEACON_LEVEL5 = ResourceCostConfigEntry.Research(0, 0, 600, 120, ResourceCosts.RESEARCH_BEACON_LEVEL5, "Beacon Level 5 Research Config");
+    
+        public static final ResourceCostConfigEntry RESEARCH_ADVANCED_TOOLS_LEVEL1 = ResourceCostConfigEntry.Research(0, 0, 50, 60, ResourceCosts.RESEARCH_ADVANCED_TOOLS_LEVEL_1, "Advanced Tools Level 1 Research Config");
+        public static final ResourceCostConfigEntry RESEARCH_ADVANCED_TOOLS_LEVEL2 = ResourceCostConfigEntry.Research(0, 0, 100, 90, ResourceCosts.RESEARCH_ADVANCED_TOOLS_LEVEL_2, "Advanced Tools Level 2 Research Config");
+        public static final ResourceCostConfigEntry RESEARCH_ADVANCED_TOOLS_LEVEL3 = ResourceCostConfigEntry.Research(0, 0, 150, 120, ResourceCosts.RESEARCH_ADVANCED_TOOLS_LEVEL_3, "Advanced Tools Level 3 Research Config");
     }
     public static class EnchantmentCosts implements Costs {
         public static final ResourceCostConfigEntry ENCHANT_MAIMING = ResourceCostConfigEntry.Enchantment(0,20, 30, ResourceCosts.ENCHANT_MAIMING, "Maiming Enchantment Config");

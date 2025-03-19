@@ -656,6 +656,20 @@
   "research.reignofnether.beacon_level5.tooltip1": "为信标添加一层下界合金，解锁力量光环。",
   "research.reignofnether.beacon_level_win": "守卫一座完全升级的信标以取胜。",
 
+  "research.reignofnether.advanced_tools_level_1": "工具升级 I",
+  "research.reignofnether.advanced_tools_level_1.tooltip1": "解锁石质工具。",
+  "research.reignofnether.advanced_tools_level_1.tooltip2": "会使所有采集行动提升 5% 的效率。",
+
+  "research.reignofnether.advanced_tools_level_2": "工具升级 II",
+  "research.reignofnether.advanced_tools_level_2.tooltip1": "解锁铁质工具。",
+  "research.reignofnether.advanced_tools_level_2.tooltip2": "会使所有采集行动提升 10% 的效率。",
+  "research.reignofnether.advanced_tools_level_2.tooltip3": "需要工具升级 I。",
+
+  "research.reignofnether.advanced_tools_level_3": "工具升级 III",
+  "research.reignofnether.advanced_tools_level_3.tooltip1": "解锁金质工具。",
+  "research.reignofnether.advanced_tools_level_3.tooltip2": "会使所有采集行动提升 15% 的效率。",
+  "research.reignofnether.advanced_tools_level_3.tooltip3": "需要工具升级 II。",
+
   "resources.reignofnether.food": "食物",
   "resources.reignofnether.wood": "木材",
   "resources.reignofnether.ore": "矿石",

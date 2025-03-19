@@ -115,7 +115,7 @@ public class ResourceSources {
                     List.of(),
                     List.of(Items.SUGAR),
                     0,
-                    1,
+                    4,
                     ResourceName.FOOD
             ),
             new ResourceSource("Farmland",
@@ -138,7 +138,7 @@ public class ResourceSources {
                     List.of(Blocks.WHEAT),
                     List.of(Items.WHEAT),
                     TICKS_PER_SECOND * 2,
-                    4,
+                    10,
                     ResourceName.FOOD,
                     (bs) -> bs.getValue(BlockStateProperties.AGE_7) == 7
             ),
@@ -147,7 +147,7 @@ public class ResourceSources {
                     List.of(Blocks.NETHER_WART),
                     List.of(Items.NETHER_WART),
                     TICKS_PER_SECOND * 2,
-                    5,
+                    10,
                     ResourceName.FOOD,
                     (bs) -> bs.getValue(BlockStateProperties.AGE_3) == 3
             ),
@@ -156,14 +156,14 @@ public class ResourceSources {
                     List.of(Blocks.MELON, Blocks.PUMPKIN, Blocks.CARVED_PUMPKIN),
                     List.of(Items.MELON, Items.PUMPKIN, Items.CARVED_PUMPKIN),
                     TICKS_PER_SECOND * 4,
-                    6,
+                    15,
                     ResourceName.FOOD
             ),
             new ResourceSource("Carrots",
                     List.of(Blocks.CARROTS),
                     List.of(Items.CARROT),
                     TICKS_PER_SECOND * 2,
-                    5,
+                    15,
                     ResourceName.FOOD,
                     (bs) -> bs.getValue(BlockStateProperties.AGE_7) == 7
             ),
@@ -171,7 +171,7 @@ public class ResourceSources {
                     List.of(Blocks.POTATOES),
                     List.of(Items.POTATO, Items.BAKED_POTATO),
                     TICKS_PER_SECOND * 2,
-                    6,
+                    20,
                     ResourceName.FOOD,
                     (bs) -> bs.getValue(BlockStateProperties.AGE_7) == 7
             ),
@@ -179,7 +179,7 @@ public class ResourceSources {
                     List.of(Blocks.BEETROOTS),
                     List.of(Items.BEETROOT),
                     TICKS_PER_SECOND * 2,
-                    5,
+                    20,
                     ResourceName.FOOD,
                     (bs) -> bs.getValue(BlockStateProperties.AGE_3) == 3
             ),
@@ -187,49 +187,49 @@ public class ResourceSources {
                     List.of(Blocks.RED_MUSHROOM, Blocks.BROWN_MUSHROOM),
                     List.of(Items.RED_MUSHROOM, Items.BROWN_MUSHROOM),
                     TICKS_PER_SECOND * 5,
-                    22,
+                    50,
                     ResourceName.FOOD
             ),
             new ResourceSource("Misc. Forageable",
                     List.of(Blocks.SUGAR_CANE, Blocks.SWEET_BERRY_BUSH),
                     List.of(Items.SWEET_BERRIES, Items.SUGAR_CANE),
                     TICKS_PER_SECOND * 5,
-                    20,
+                    50,
                     ResourceName.FOOD
             ),
             new ResourceSource("Mushroom Stem",
                     List.of(Blocks.MUSHROOM_STEM),
                     List.of(Items.MUSHROOM_STEM),
                     TICKS_PER_SECOND * 10,
-                    10,
+                    30,
                     ResourceName.FOOD
             ),
             new ResourceSource("Red Mushroom Block",
                     List.of(Blocks.RED_MUSHROOM_BLOCK),
                     List.of(Items.RED_MUSHROOM_BLOCK),
                     TICKS_PER_SECOND * 10,
-                    10,
+                    30,
                     ResourceName.FOOD
             ),
             new ResourceSource("Brown Mushroom Block",
                     List.of(Blocks.BROWN_MUSHROOM_BLOCK),
                     List.of(Items.BROWN_MUSHROOM_BLOCK),
                     TICKS_PER_SECOND * 10,
-                    10,
+                    30,
                     ResourceName.FOOD
             ),
             new ResourceSource("Bee nest",
                     List.of(Blocks.BEE_NEST),
                     List.of(Items.BEE_NEST),
                     TICKS_PER_SECOND * 10,
-                    100,
+                    150,
                     ResourceName.FOOD
             ),
             new ResourceSource("Shroomlight",
                     List.of(Blocks.SHROOMLIGHT),
                     List.of(Items.SHROOMLIGHT),
                     TICKS_PER_SECOND * 10,
-                    120,
+                    200,
                     ResourceName.FOOD
             ),
             new ResourceSource("Extra large food item",
@@ -237,28 +237,28 @@ public class ResourceSources {
                     List.of(Items.COOKED_BEEF,  Items.COOKED_CHICKEN, Items.COOKED_PORKCHOP, Items.COOKED_RABBIT, Items.CHICKEN,
                             Items.COOKED_MUTTON, Items.CAKE, Items.PUMPKIN_PIE, Items.RABBIT_STEW, Items.ENCHANTED_GOLDEN_APPLE),
                     0,
-                    75,
+                    150,
                     ResourceName.FOOD
             ),
             new ResourceSource("Large food item",
                     List.of(),
                     List.of(Items.BEEF, Items.PORKCHOP, Items.MUTTON, Items.RABBIT, Items.MUSHROOM_STEW, Items.BEETROOT_SOUP, Items.GOLDEN_APPLE, Items.GOLDEN_CARROT),
                     0,
-                    50,
+                    100,
                     ResourceName.FOOD
             ),
             new ResourceSource("Medium food item",
                     List.of(),
                     List.of(Items.LEATHER, Items.EGG, Items.APPLE, Items.BREAD, Items.HONEY_BOTTLE, Items.COD, Items.COOKED_COD, Items.SALMON, Items.COOKED_SALMON, Items.GLOW_BERRIES),
                     0,
-                    25,
+                    50,
                     ResourceName.FOOD
             ),
             new ResourceSource("Small food item",
                     List.of(),
                     List.of(Items.ROTTEN_FLESH, Items.MELON_SLICE, Items.SPIDER_EYE, Items.POISONOUS_POTATO),
                     0,
-                    5,
+                    25,
                     ResourceName.FOOD
             )
     );
@@ -299,14 +299,14 @@ public class ResourceSources {
                     List.of(Items.OAK_LOG, Items.BIRCH_LOG, Items.ACACIA_LOG, Items.DARK_OAK_LOG, Items.JUNGLE_LOG, Items.MANGROVE_LOG, Items.SPRUCE_LOG,
                             Items.OAK_WOOD, Items.BIRCH_WOOD, Items.ACACIA_WOOD, Items.DARK_OAK_WOOD, Items.JUNGLE_WOOD, Items.MANGROVE_WOOD, Items.SPRUCE_WOOD),
                     TICKS_PER_SECOND * 12,
-                    15,
+                    30,
                     ResourceName.WOOD
             ),
             new ResourceSource("Roots",
                     List.of(Blocks.MUDDY_MANGROVE_ROOTS, Blocks.MANGROVE_ROOTS),
                     List.of(Items.MUDDY_MANGROVE_ROOTS, Items.MANGROVE_ROOTS),
                     TICKS_PER_SECOND * 12,
-                    15,
+                    30,
                     ResourceName.WOOD
             ),
             new ResourceSource("Nether Logs",
@@ -316,7 +316,7 @@ public class ResourceSources {
                     ),
                     List.of(Items.CRIMSON_STEM, Items.WARPED_STEM, Items.CRIMSON_HYPHAE, Items.WARPED_HYPHAE),
                     TICKS_PER_SECOND * 12,
-                    17,
+                    17*2,
                     ResourceName.WOOD
             ),
             new ResourceSource("Leaves",
@@ -325,7 +325,7 @@ public class ResourceSources {
                     List.of(Items.ACACIA_LEAVES, Items.AZALEA_LEAVES, Items.BIRCH_LEAVES, Items.FLOWERING_AZALEA_LEAVES, Items.JUNGLE_LEAVES, Items.DARK_OAK_LEAVES,
                             Items.MANGROVE_LEAVES, Items.OAK_LEAVES, Items.SPRUCE_LEAVES),
                     8,
-                    1,
+                    2,
                     ResourceName.WOOD
             )
     );

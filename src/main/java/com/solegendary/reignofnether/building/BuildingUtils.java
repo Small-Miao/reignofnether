@@ -129,7 +129,8 @@ public class BuildingUtils {
             case EndPortal.buildingName -> building = new EndPortal(level, pos, rotation, ownerName);
             case HealingFountain.buildingName -> building = new HealingFountain(level, pos, rotation, ownerName);
             case NeutralTransportPortal.buildingName -> building = new NeutralTransportPortal(level, pos, rotation, ownerName);
-            case Walls.buildingName -> building = new Walls(level, pos, rotation, ownerName);
+            case Walls_V.buildingName -> building = new Walls_V(level, pos, rotation, ownerName);
+            case Walls_N.buildingName -> building = new Walls_N(level, pos, rotation, ownerName);
         }
         if (building != null)
             building.setLevel(level);

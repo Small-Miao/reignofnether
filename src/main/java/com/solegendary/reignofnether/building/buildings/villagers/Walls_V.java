@@ -22,12 +22,12 @@ import java.util.List;
 
 
 import static com.solegendary.reignofnether.building.BuildingUtils.getAbsoluteBlockData;
-public class Walls extends AbstractWalls {
-    public final static String buildingName = "Walls";
+public class Walls_V extends AbstractWalls {
+    public final static String buildingName = "Walls_V";
     public final static String structureName = "walls";
     public final static ResourceCost cost = ResourceCosts.WALLS;
 
-    public Walls(Level level, BlockPos originPos, Rotation rotation, String ownerName) {
+    public Walls_V(Level level, BlockPos originPos, Rotation rotation, String ownerName) {
         super(level, originPos, rotation, ownerName, getAbsoluteBlockData(getRelativeBlockData(level), level, originPos, rotation), false);
         this.name = buildingName;
         this.ownerName = ownerName;
@@ -54,14 +54,15 @@ public class Walls extends AbstractWalls {
             buildingName,
             new ResourceLocation("minecraft", "textures/block/stone_bricks.png"),
             hotkey,
-            ()->BuildingClientEvents.getBuildingToPlace() == Walls.class,
+            ()->BuildingClientEvents.getBuildingToPlace() == Walls_V.class,
             ()->{return false;},
             ()->{return true;},
-            () -> BuildingClientEvents.setBuildingToPlace(Walls.class),
+            () -> BuildingClientEvents.setBuildingToPlace(Walls_V.class),
             null,
             List.of(
-                FormattedCharSequence.forward(I18n.get("building.walls"), Style.EMPTY.withBold(true)),
-                ResourceCosts.getFormattedCost(cost)
+                FormattedCharSequence.forward(I18n.get("buildings.neutral.reignofnether.walls"), Style.EMPTY.withBold(true)),
+                ResourceCosts.getFormattedCost(cost),
+                FormattedCharSequence.forward(I18n.get("buildings.neutral.reignofnether.walls.tooltip1"), Style.EMPTY.withBold(true))
             ),
             null
         );

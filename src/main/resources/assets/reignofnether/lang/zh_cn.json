@@ -366,6 +366,8 @@
   "buildings.neutral.reignofnether.neutral_transport_portal": "运输传送门（中立）",
   "buildings.neutral.reignofnether.neutral_transport_portal.tooltip1": "任何单位均可通过此传送门",
   "buildings.neutral.reignofnether.neutral_transport_portal.tooltip2": "传送至相连的另一座传送门。",
+  "buildings.neutral.reignofnether.walls": "城墙",
+  "buildings.neutral.reignofnether.walls.tooltip1": "一座坚固的城墙，能够阻挡敌人的进攻。",
 
   "commands.reignofnether.toggle_fow": "%s - 为所有玩家开关战争迷雾",
   "commands.reignofnether.surrender": "%s - 投降认输",

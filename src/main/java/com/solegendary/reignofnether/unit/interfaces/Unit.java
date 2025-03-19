@@ -302,10 +302,11 @@ public interface Unit {
     default void setupEquipmentAndUpgradesClient() { }
 
     public static float getSpeedModifier(Unit unit) {
+        float baseSpeed = 1.15f; // 15% global speed increase
         if (unit instanceof BruteUnit brute && brute.isHoldingUpShield) {
-            return 0.5f;
+            return baseSpeed * 0.5f;
         }
-        return 1.0f;
+        return baseSpeed;
     }
 
     public static Ability getAbility(Unit unit, UnitAction abilityAction) {

@@ -333,6 +333,7 @@ public class UnitServerEvents {
             mob.setItemSlot(EquipmentSlot.CHEST, ItemStack.EMPTY);
             mob.setItemSlot(EquipmentSlot.LEGS, ItemStack.EMPTY);
             mob.setItemSlot(EquipmentSlot.FEET, ItemStack.EMPTY);
+            mob.maxUpStep = 1.0f;
         }
 
         if (evt.getEntity() instanceof Unit unit && evt.getEntity() instanceof LivingEntity entity
@@ -466,7 +467,7 @@ public class UnitServerEvents {
         boolean drownedInfected = evt.getEntity().getActiveEffectsMap().containsKey(MobEffects.HUNGER);
         boolean slimeInfected = evt.getEntity().getActiveEffectsMap().containsKey(MobEffects.CONFUSION);
 
-        if (evt.getEntity().getLastHurtByMob() instanceof Unit unit && (drownedInfected || slimeInfected)) {
+        if (evt.getEntity() instanceof Unit unit && (drownedInfected || slimeInfected)) {
 
             EntityType<? extends Unit> entityType = null;
 

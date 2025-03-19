@@ -103,6 +103,7 @@ public class ReignOfNetherCommonConfigs {
         BuildingCosts.WITHER_SHRINE.define(BUILDER);
         BuildingCosts.BASALT_SPRINGS.define(BUILDER);
         BuildingCosts.FORTRESS.define(BUILDER);
+        BuildingCosts.WALLS.define(BUILDER);
 
         //*Research*
         BUILDER.comment("Research Cost Configurations");
@@ -245,6 +246,7 @@ public class ReignOfNetherCommonConfigs {
         public static final ResourceCostConfigEntry WITHER_SHRINE = ResourceCostConfigEntry.Building(0, 350, 200, 0, ResourceCosts.WITHER_SHRINE, "Wither Shrine Config");
         public static final ResourceCostConfigEntry BASALT_SPRINGS = ResourceCostConfigEntry.Building(0, 200, 200, 0, ResourceCosts.BASALT_SPRINGS, "Basalt Springs Config");
         public static final ResourceCostConfigEntry FORTRESS = ResourceCostConfigEntry.Building(0, 400, 300, 0, ResourceCosts.FORTRESS, "Fortress Config");
+        public static final ResourceCostConfigEntry WALLS = ResourceCostConfigEntry.Building(0, 200, 100, 0, ResourceCosts.WALLS, "Walls Config");
     }
     public static class ResearchCosts implements Costs {
         public static final ResourceCostConfigEntry RESEARCH_GOLEM_SMITHING = ResourceCostConfigEntry.Research(0, 150,200, 90, ResourceCosts.RESEARCH_GOLEM_SMITHING, "Golem Smithing Research Config");

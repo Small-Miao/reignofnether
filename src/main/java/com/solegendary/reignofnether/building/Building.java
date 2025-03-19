@@ -96,7 +96,7 @@ public abstract class Building {
     public int msToNextBuild = BASE_MS_PER_BUILD; // 5ms per tick
 
     // building collapses at a certain % blocks remaining so players don't have to destroy every single block
-    public final float MIN_BLOCKS_PERCENT = 0.5f;
+    public float MIN_BLOCKS_PERCENT = 0.5f;
     // chance for a mini explosion to destroy extra blocks if a player is breaking it
     // should be higher for large fragile buildings so players don't take ages to destroy it
     protected float explodeChance = 0.3f;
@@ -1088,5 +1088,9 @@ public abstract class Building {
 
     public int getUpgradeLevel() {
         return 0;
+    }
+
+    public void setMinBlocksPercent(float value) {
+        this.MIN_BLOCKS_PERCENT = value;
     }
 }

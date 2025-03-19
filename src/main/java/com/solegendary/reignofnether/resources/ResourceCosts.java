@@ -93,6 +93,7 @@ public class ResourceCosts {
     public static final ResourceCost BASALT_SPRINGS = new ResourceCost(ID, "BASALT_SPRINGS");
     public static final ResourceCost WITHER_SHRINE = new ResourceCost(ID, "WITHER_SHRINE");
     public static final ResourceCost FORTRESS = new ResourceCost(ID, "FORTRESS");
+    public static final ResourceCost WALLS = new ResourceCost(ID, "WALLS");
 
     // RESEARCH
 
@@ -261,6 +262,7 @@ public class ResourceCosts {
         WITHER_SHRINE.bakeValues(ReignOfNetherCommonConfigs.BuildingCosts.WITHER_SHRINE);
         BASALT_SPRINGS.bakeValues(ReignOfNetherCommonConfigs.BuildingCosts.BASALT_SPRINGS);
         FORTRESS.bakeValues(ReignOfNetherCommonConfigs.BuildingCosts.FORTRESS);
+        WALLS.bakeValues(ReignOfNetherCommonConfigs.BuildingCosts.WALLS);
         // ******************* RESEARCH ******************* //
         RESEARCH_GOLEM_SMITHING.bakeValues(ReignOfNetherCommonConfigs.ResearchCosts.RESEARCH_GOLEM_SMITHING);
         RESEARCH_LAB_LIGHTNING_ROD.bakeValues(ReignOfNetherCommonConfigs.ResearchCosts.RESEARCH_LAB_LIGHTNING_ROD);
